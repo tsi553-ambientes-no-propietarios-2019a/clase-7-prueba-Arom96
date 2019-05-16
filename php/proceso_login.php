@@ -21,7 +21,7 @@
 				
 				while ($row = $res->fetch_assoc()){
 				$_SESSION['user'] = ['usuario'=> $row['usuario'], 'id'=> $row['id']];
-				//print_r($_SESSION['user']);
+		
 					$NombredeUsuario = $row['usuario'];
 					$NombredeTienda = $row['nombretienda'];
 					$idUsu = $row['id'];

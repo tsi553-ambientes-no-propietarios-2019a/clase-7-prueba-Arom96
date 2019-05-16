@@ -14,8 +14,8 @@ if (isset($_POST['nombretienda']) &&
 		if($clave == $confirmarclave){
     
             $sql_insert = "INSERT INTO tienda
-		                (nombretienda,usuario,clave,confirmarclave)
-		                VALUES ('$nombretienda','$usuario',MD5('$clave'),MD5('$confirmarclave'))";
+		                (nombretienda,usuario,clave)
+		                VALUES ('$nombretienda','$usuario',MD5('$clave'))";
 
 		       
 		       $resul= $conn->query($sql_insert);
