@@ -1,7 +1,5 @@
-<?php
-include('common/utils.php');
+<?php 
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,20 +14,20 @@ include('common/utils.php');
     <div class="col-sm">
     </div>
     <div class="col-sm">
-      <form action="php/proceso.php" method="post">
+    <h1>Iniciar Sesión</h1>
+      <form action="php/proceso_login.php" method="POST">
   <div class="form-group">
     <label for="exampleInputEmail1">Usuario</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese nombre de usuario">
+    <input type="text" class="form-control" placeholder="Ingrese nombre de usuario" name="usuario" required>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Contraseña</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+    <input type="password" class="form-control" placeholder="Contraseña" name="clave" required>
   </div>
   <button type="submit" class="btn btn-primary">Iniciar</button>
-  
 </form>
 <br>
-<form action="registro_tienda.php" method="post">
+<form action="registro_tienda.php">
 	<button type="submit" class="btn btn-primary">Registrar Tienda</button>
 </form>
     </div>

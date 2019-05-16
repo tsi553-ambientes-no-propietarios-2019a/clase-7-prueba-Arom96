@@ -1,30 +1,36 @@
-<?php 
-include('../common/utils.php');
+<?php
+if (isset($_POST['nombretienda']) && 
+		isset($_POST['usuario']) && 
+		isset($_POST['clave']) && 
+		isset($_POST['confirmarclave'])) {
 
-if($_POST) {
-	if (isset($_POST['nombretienda']) && isset($_POST['usuario']) && isset($_POST['clave']) && !empty($_POST['nombretienda']) && !empty($_POST['usuario']) && !empty($_POST['clave'])) {
+		$conn = new mysqli('localhost', 'root', '', 'pruebab1');
 
 		$nombretienda = $_POST['nombretienda'];
 		$usuario = $_POST['usuario'];
 		$clave = $_POST['clave'];
+		$confirmarclave = $_POST['confirmarclave'];
 
-		$sql_insert = "INSERT INTO tienda
-		(nombretienda, usuario, clave)
-		VALUES ('$nombretienda','$usuario', MD5('$clave'))";
+		if($clave == $confirmarclave){
+    
+            $sql_insert = "INSERT INTO tienda
+		                (nombretienda,usuario,clave,confirmarclave)
+		                VALUES ('$nombretienda','$usuario',MD5('$clave'),MD5('$confirmarclave'))";
 
-		echo $sql_insert;
-		$conn->query($sql_insert);
+		       
+		       $resul= $conn->query($sql_insert);
 
-		if ($conn->error) {
-			echo 'Ocurrió un error ' . $conn->error;
-		} else {
-			redirect('../index.php');
-		}
-	} else {
-		header('Location: ../registro_tienda.php?error_message=Ingrese todos los datos!');
-		exit;
+                if ($conn->error) {
+                    header('Location: ../registro_tienda.php?error_message=El nombre de usuario ya existe!');
+                }else{
+                header('Location: ../index.php?error_message=Tienda registrada exitosamente, puede iniciar sesion');
+	            exit;
+	        }
+        }else{
+            header('Location: ../registro_tienda.php?error_message=Las contraseñas no coinciden!');
+		    exit;
 	}
-} else {
-	header('Location: ../registro_tienda.php');
-	exit;
 }
+
+
+?>

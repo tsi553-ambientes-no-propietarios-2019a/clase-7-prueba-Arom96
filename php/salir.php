@@ -1,5 +1,5 @@
 <?php 
-include('../logica/logica.php');
+include('../common/utils.php');
 
 session_destroy();
 

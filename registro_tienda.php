@@ -28,20 +28,20 @@ if($_GET) {
     	<h1>Registro De Tienda</h1>
     	<form action="php/proceso_registro.php" method="post">
   <div class="form-group">
-    <label for="inputAddress">Nombre Tienda</label>
-    <input type="text" class="form-control" placeholder="Nombre Tienda...">
+    <label>Nombre Tienda</label>
+    <input type="text" class="form-control" placeholder="Nombre Tienda..." name="nombretienda" required >
   </div>
   <div class="form-group">
-    <label for="inputAddress2">Usuario</label>
-    <input type="text" class="form-control"  placeholder="Nombre Usuario...">
+    <label>Usuario</label>
+    <input type="text" class="form-control"  placeholder="Nombre Usuario..." name="usuario" required>
   </div>
-  <div class="form-group col-md-6">
-      <label for="inputPassword4">Contraseña</label>
-      <input type="password" class="form-control"  placeholder="Contraseña...">
+  <div class="form-group">
+      <label>Contraseña</label>
+      <input type="password" class="form-control"  placeholder="Contraseña..." name="clave" required>
     </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Repetir Contraseña</label>
-      <input type="password" class="form-control" placeholder="Confirmar Contraseña">
+    <div class="form-group">
+      <label>Repetir Contraseña</label>
+      <input type="password" class="form-control" placeholder="Confirmar Contraseña" name="confirmarclave" required>
     </div>
   <div class="form-row">
     
